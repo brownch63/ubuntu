@@ -38,3 +38,8 @@ COPY sshd_config /etc/ssh/
 
 # Expose 2222
 EXPOSE 2222 80
+
+# Copy init_container.sh
+COPY init_container.sh /bin/
+RUN chmod 755 /bin/init_container.sh
+CMD ["/bin/init_container.sh"]
